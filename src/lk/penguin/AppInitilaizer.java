@@ -9,30 +9,28 @@ public class AppInitilaizer {
         System.out.print("input number: ");
         int number=scanner.nextInt();
 
-        ArrayList<Integer> multiples=new ArrayList<>();
-        System.out.println("Input numbers that you want to multiply: ");
+        int number1=1;
+        int number2=2;
+        int total=0;
+        ArrayList<Integer> fibonaciList=new ArrayList<>();
+        fibonaciList.add(number1);
+        fibonaciList.add(number2);
 
 
-        while(true) {
-            int multiplyDigit= scanner.nextInt();
-            if(multiplyDigit==0){
+        while(true){
+            int number3=number1+number2;
+            if(number3>=number){
                 break;
             }
-            multiples.add(multiplyDigit);
+            fibonaciList.add(number3);
+
+            number1=number2;
+            number2=number3;
+
+
         }
-        for(int i:multiples){
-            System.out.println(i);
-        }
-        ArrayList<Integer> dividenumbers=new ArrayList<>();
-        for(int i=0;i<number;i++){
-            if(i%3==0 || i%5==0){
-                dividenumbers.add(i);
-            }
-        }
-        int total=0;
-        for (int number1:dividenumbers){
-            System.out.println(number1);
-            total+=number1;
+        for(int num:fibonaciList){
+            total+=num;
         }
         System.out.println(total);
     }
